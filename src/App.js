@@ -60,7 +60,7 @@ const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=c2
 const url2 = "https://www.scorebat.com/video-api/v1/";
 // const url4 =  'https://football-prediction-api.p.rapidapi.com/api/v2/list-markets';
 //const url4 =  'https://api-football-v1.p.rapidapi.com/v3/teams/seasons';
-//const options4 = { method: 'GET',headers: {  'x-rapidapi-key': '2bd4a97095mshf0fe1797ec6160dp18ffa5jsn31e5c0ca9871',
+//const options4 = { method: 'GET',headers: {  'x-rapidapi-key': '',
 //'x-rapidapi-host': 'v3.football.api-sports.io'}};
 
 
