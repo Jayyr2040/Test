@@ -59,9 +59,9 @@ const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=bbfefcdb3
 const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en&max=2&in=title";
 const url2 = "https://www.scorebat.com/video-api/v1/";
 // const url4 =  'https://football-prediction-api.p.rapidapi.com/api/v2/list-markets';
-const url4 =  'https://api-football-v1.p.rapidapi.com/v3/teams/seasons';
-const options4 = { method: 'GET',headers: {  'x-rapidapi-key': '2bd4a97095mshf0fe1797ec6160dp18ffa5jsn31e5c0ca9871',
-'x-rapidapi-host': 'v3.football.api-sports.io'}};
+//const url4 =  'https://api-football-v1.p.rapidapi.com/v3/teams/seasons';
+//const options4 = { method: 'GET',headers: {  'x-rapidapi-key': '2bd4a97095mshf0fe1797ec6160dp18ffa5jsn31e5c0ca9871',
+//'x-rapidapi-host': 'v3.football.api-sports.io'}};
 
 
 
