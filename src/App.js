@@ -2,10 +2,33 @@ import "./App.css";
 import React from "react";
 import Moment from "react-moment";
 
+let globalCount = 0;
+
 function App() {
   const [highlights, setHighlights] = React.useState([]);
   const [counter, setCounter] = React.useState(0);
   const urlRegex = /(https?:\/\/[^ ]*)/;
+  const url2 = "https://www.scorebat.com/video-api/v1/";
+
+  if (globalCount === 0) {
+    console.log("Global Count - ",globalCount);
+    globalCount += 1;
+
+    const makeAPICall1 = async () => {
+      const response = await fetch(url2);
+      if (!response.ok) {
+        console.log("server bad response");
+        throw new Error("server bad response");
+      }
+      const data = await response.json();
+      console.log("url2 - data", data);
+      setHighlights(data);
+    };
+    makeAPICall1().catch(() => {
+      console.log("There has been a problem with your fetch operation: ");
+    });
+
+  }
 
   const handleNext = () => {
     setCounter((prevCount) =>
@@ -16,6 +39,8 @@ function App() {
   const handlePrev = () => {
     setCounter((prevCount) => (prevCount === 0 ? prevCount : prevCount - 1));
   };
+
+  
   // const url1 = "https://gnews.io/api/v4/search?q="+"manchester"+" united"+ "&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en";
   // const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=bbfefcdb33b0c247e627cbc6cf6552a4&lang=en&max=2&in=title";
   //const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en&max=2&in=title";
@@ -29,9 +54,9 @@ function App() {
   //const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=3cdf1b72b7469b7836cc6c60746e5a40&lang=en&max=1&in=title";
   //const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=3cdf1b72b7469b7836cc6c60746e5a40&lang=en&max=1&in=title";
   // const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&append_to_response=videos,images&language=en`;
-  const url2 = "https://www.scorebat.com/video-api/v1/";
+  
 
-  React.useEffect(() => {
+/*   React.useEffect(() => {
     const makeAPICall1 = async () => {
       const response = await fetch(url2);
       if (!response.ok) {
@@ -46,7 +71,7 @@ function App() {
       console.log("There has been a problem with your fetch operation: ");
     });
     //    function comes here
-  }, [highlights]);
+  }, [highlights]); */
 
   return (
     <div className="App">
@@ -80,11 +105,11 @@ function App() {
         <div>
           <iframe
             src={highlights?.[counter]?.embed?.match(urlRegex)[1]}
-            frameborder="0"
+            frameBorder="0"
             width="560"
             height="650"
             alt=""
-            allowfullscreen
+            allowFullScreen
             allow="autoplay; fullscreen"
             title="This is a unique title"
           ></iframe>
