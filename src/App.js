@@ -1,36 +1,40 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react'
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+//import React, { useState } from 'react'
+import React from 'react'
+// import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import Moment from 'react-moment';
 
+//let data;
+//let data2;
+//let data3;
 
 function App() {
 
-  const [jokes,setJokes] = useState("");
-  const [jokeArr,setjokeArr] = useState([]);
-  const [statusC, setStatusC] = React.useState(false);
-  const [status, setStatus] = React.useState("idle");
- const [counter, setCounter] = React.useState(0);
+ // const [jokes,setJokes] = useState("");
+ // const [jokeArr,setjokeArr] = useState([]);
+ // const [statusC, setStatusC] = React.useState(false);
+ // const [status, setStatus] = React.useState("idle");
+// const [counter, setCounter] = React.useState(0);
 
- const [jokes2,setJokes2] = useState("");
- const [jokeArr2,setjokeArr2] = useState([]);
- const [statusC2, setStatusC2] = React.useState(false);
- const [status2, setStatus2] = React.useState("idle");
-const [counter2, setCounter2] = React.useState(0);
+const [jokes2,setJokes2] = React.useState("");
+const [jokeArr2,setjokeArr2] = React.useState([]);
+// const [statusC2, setStatusC2] = React.useState(false);
+// const [status2, setStatus2] = React.useState("idle");
+//const [counter2, setCounter2] = React.useState(0);
 
-const [jokes3,setJokes3] = useState("");
- const [jokeArr3,setjokeArr3] = useState([]);
- const [statusC3, setStatusC3] = React.useState(false);
- const [status3, setStatus3] = React.useState("idle");
-const [counter3, setCounter3] = React.useState(0);
+//const [jokes3,setJokes3] = useState("");
+//const [jokeArr3,setjokeArr3] = useState([]);
+//const [statusC3, setStatusC3] = React.useState(false);
+//const [status3, setStatus3] = React.useState("idle");
+//const [counter3, setCounter3] = React.useState(0);
 
 
-const [jokes4,setJokes4] = useState("");
- const [jokeArr4,setjokeArr4] = useState([]);
- const [statusC4, setStatusC4] = React.useState(false);
- const [status4, setStatus4] = React.useState("idle");
-const [counter4, setCounter4] = React.useState(0);
+//const [jokes4,setJokes4] = useState("");
+// const [jokeArr4,setjokeArr4] = useState([]);
+// const [statusC4, setStatusC4] = React.useState(false);
+// const [status4, setStatus4] = React.useState("idle");
+//const [counter4, setCounter4] = React.useState(0);
 
 const urlRegex = /(https?:\/\/[^ ]*)/;
 
@@ -55,8 +59,17 @@ console.log(url3);
 // const options = { method: 'GET',headers: { 'X-Auth-Token': '30647722a43d47c7a3e086ca50e697c3','Accept-Encoding': ''}};
 
 // const url1 = "https://gnews.io/api/v4/search?q="+"manchester"+" united"+ "&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en";
-const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=bbfefcdb33b0c247e627cbc6cf6552a4&lang=en&max=2&in=title";
-const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en&max=2&in=title";
+// const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=bbfefcdb33b0c247e627cbc6cf6552a4&lang=en&max=2&in=title";
+//const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en&max=2&in=title";
+//const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=c276e35eade36eea9a97d3bb9c8eda9f&lang=en&max=2&in=title";
+//const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=46e1686127a8bab7d64f6af9e0b4a124&lang=en&max=2&in=title";
+//const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=46e1686127a8bab7d64f6af9e0b4a124&lang=en&max=2&in=title";
+//const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=5d5b4948702509a255d53a556bec5ba4&lang=en&max=2&in=title";
+//const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=5d5b4948702509a255d53a556bec5ba4&lang=en&max=2&in=title";
+// const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=f4681ae20797642e3221559d81c7b2aa&lang=en&max=2&in=title";
+// const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=f4681ae20797642e3221559d81c7b2aa&lang=en&max=2&in=title";
+//const url1 = "https://gnews.io/api/v4/search?q=manchester+united&token=3cdf1b72b7469b7836cc6c60746e5a40&lang=en&max=1&in=title";
+//const url3 = "https://gnews.io/api/v4/top-headlines?q=manchester+united&token=3cdf1b72b7469b7836cc6c60746e5a40&lang=en&max=1&in=title";
 const url2 = "https://www.scorebat.com/video-api/v1/";
 // const url4 =  'https://football-prediction-api.p.rapidapi.com/api/v2/list-markets';
 //const url4 =  'https://api-football-v1.p.rapidapi.com/v3/teams/seasons';
@@ -69,11 +82,11 @@ const url2 = "https://www.scorebat.com/video-api/v1/";
 
 
 
-  const handleStatus = () => {
-    setStatusC(status => status === false? true:false);
-  };
+//  const handleStatus = () => {
+//    setStatusC(status => status === false? true:false);
+//  };
 
-  const addNewjokes = () => {
+ /*  const addNewjokes = () => {
   console.log("jokes in AddNewjokes() - Status",jokes);
   console.log("jokeArr in AddNewjokes() - Status",jokeArr);
 
@@ -88,98 +101,101 @@ const url2 = "https://www.scorebat.com/video-api/v1/";
                   setjokeArr([...jokeArr,(jokes)]);
               } 
             }
-     };
+     }; */
 
-const nextNumber = () => {
-    setCounter(counter => (counter < (jokeArr.length-1) ? counter + 1 : counter));
-  }
+//const nextNumber = () => {
+//    setCounter(counter => (counter < (jokeArr.length-1) ? counter + 1 : counter));
+//  }
 
-  const prevNumber = () => {
-    setCounter(counter => (counter === 0 ? counter : counter - 1));
-  }
+  //const prevNumber = () => {
+   // setCounter(counter => (counter === 0 ? counter : counter - 1));
+ // }
 
-React.useEffect(() => { 
-        setStatus("pending");
-        const makeAPICall = async () => {
+//React.useEffect(() => { 
+  //      setStatus("pending");
+      /*   const makeAPICall = async () => {
         const response = await fetch(url1);
         if(!response.ok){   
           console.log("server bad response"); 
           throw new Error("server bad response");
         }
-        const data = await response.json(); 
+       // const data = await response.json(); 
+        data = await response.json(); 
         console.log("url1 - data",data);
-        setStatus("resolved");
-        setJokes(data);
-        setjokeArr(data);
-        console.log("jokes in useEffect - Status",jokes);
-        console.log("jokeArr in useEffect - Status",jokeArr);
+     //   setStatus("resolved");
+  //      setJokes(data);
+  //      setjokeArr(data);
+   //     console.log("jokes in useEffect - Status",jokes);
+      //  console.log("jokeArr in useEffect - Status",jokeArr);
         
         };      
           makeAPICall().catch(() => {
-          setStatus("rejected");
+     //     setStatus("rejected");
           //console.log('There has been a problem with your fetch operation: ' + e.message);
         });
-        addNewjokes();
-      }
-      ,[]);
+   //     addNewjokes();
+   //   }
+   //  ,[jokeArr,jokes]);
+ */
 
-
-      React.useEffect(() => { 
-        setStatus("pending");
-        const makeAPICall = async () => {
+     React.useEffect(() => { 
+     // setStatus2("pending");
+        const makeAPICall1 = async () => {
         const response = await fetch(url2);
         if(!response.ok){   
           console.log("server bad response"); 
           throw new Error("server bad response");
         }
         const data = await response.json(); 
+       // data2 = await response.json(); 
         console.log("url2 - data",data);
-        setStatus2("resolved");
-        setJokes2(data);
-        setjokeArr2(data);
-        console.log("jokes in useEffect - Status",jokes);
-        console.log("jokeArr in useEffect - Status",jokeArr);
+    // setStatus2("resolved");
+    setJokes2(data);
+    setjokeArr2(data);
+    console.log("jokes in useEffect - Status",jokes2);
+    console.log("jokeArr in useEffect - Status",jokeArr2);
         
         };      
-          makeAPICall().catch(() => {
-          setStatus2("rejected");
-          //console.log('There has been a problem with your fetch operation: ' + e.message);
+          makeAPICall1().catch(() => {
+      // setStatus2("rejected");
+         // console.log('There has been a problem with your fetch operation: ' + e.message);
         });
-        addNewjokes();
-      }
-      ,[]);
+   //    addNewjokes();
+     }
+    ,[jokeArr2,jokes2]);
 
-      React.useEffect(() => { 
-        setStatus("pending");
-        const makeAPICall = async () => {
+   //   React.useEffect(() => { 
+  //      setStatus("pending");
+      /*   const makeAPICall2 = async () => {
         const response = await fetch(url3);
         if(!response.ok){   
           console.log("server bad response"); 
           throw new Error("server bad response");
         }
-        const data = await response.json(); 
-        console.log("url3 - data",data);
-        setStatus3("resolved");
-        setJokes3(data);
-        setjokeArr3(data);
-        console.log("jokes in useEffect - Status",jokes);
-        console.log("jokeArr in useEffect - Status",jokeArr);
+       // const data = await response.json(); 
+       data3 = await response.json(); 
+        console.log("url3 - data",data3);
+     //   setStatus3("resolved");
+   //     setJokes3(data);
+   //     setjokeArr3(data);
+   //    console.log("jokes in useEffect - Status",jokes3);
+     //   console.log("jokeArr in useEffect - Status",jokeArr3);
         
         };      
-          makeAPICall().catch(() => {
-          setStatus3("rejected");
+          makeAPICall2().catch(() => {
+      //    setStatus3("rejected");
           //console.log('There has been a problem with your fetch operation: ' + e.message);
         });
-        addNewjokes();
-      }
-      ,[]);
-
+    //    addNewjokes();
+   //  }
+   //   ,[jokeArr3,jokes3]);
+ */
       
 
 
 
 
-const Title = () => {
+/* const Title = () => {
   if(status === "idle"){
 
   return "Jokes apeear here"
@@ -194,50 +210,48 @@ const Title = () => {
         return <h2>{jokes?.joke}</h2>
   }
 
-}
+} */
 
   return (
-    <div className="App">
-      <h1>Headline news</h1>
-      {jokeArr?.articles?.[0]?.title}
-      <br></br>
-      <Moment fromNow >{jokeArr?.articles?.[0]?.publishedAt}</Moment>
-      {jokeArr?.articles?.[0]?.source.name}
-      {jokeArr?.articles?.[0]?.url}
-     <img src={jokeArr?.articles?.[0]?.image}/>
+<div className="App">
+<h1>Headline news</h1>
+ {/* {jokeArr?.articles?.[0]?.title}
+ <br></br>
+  <Moment fromNow >{jokeArr?.articles?.[0]?.publishedAt}</Moment>
+  {jokeArr?.articles?.[0]?.source.name}
+  {jokeArr?.articles?.[0]?.url}
+  <img src={jokeArr?.articles?.[0]?.image} alt=""/>
 
-     <h1>Top Headline news</h1>
-      {jokeArr3?.articles?.[0]?.title}
-      <br></br>
-      <Moment fromNow >{jokeArr3?.articles?.[0]?.publishedAt}</Moment>
-      {jokeArr3?.articles?.[0]?.source.name}
-      {jokeArr3?.articles?.[0]?.url}
-     <img src={jokeArr3?.articles?.[0]?.image}/>
-
+  <h1>Top Headline news</h1>
+   {jokeArr3?.articles?.[0]?.title}
+   <br></br>
+    <Moment fromNow >{jokeArr3?.articles?.[0]?.publishedAt}</Moment>
+    {jokeArr3?.articles?.[0]?.source.name}
+     {jokeArr3?.articles?.[0]?.url}
+   <img src={jokeArr3?.articles?.[0]?.image} alt=""/> */}
    
-   {/* {(jokeArr2?.[73]?.embed)} */}
+  {/* {(jokeArr2?.[73]?.embed)} */}
   
 
-    {/* { ReactHtmlParser(jokeArr2?.[73]?.embed) } maybe use this in the player.js one single player*/}
-    
-    <h1>Football highlights</h1>
- <div>
-    {/* <iframe src='https://www.scorebat.com/embed/g/1045575/?utm_source=api&utm_medium=match&utm_campaign=dflt' frameborder='0' width='560' height='650' ></iframe> */}
-    
-    <iframe src={jokeArr2?.[29]?.embed?.match(urlRegex)[1]} frameborder='0' width='560' height='650' alt="" allowfullscreen allow='autoplay; fullscreen' ></iframe>
-   
-    </div>
-
+   {/* { ReactHtmlParser(jokeArr2?.[73]?.embed) } maybe use this in the player.js one single player*/}
+ {/*    
+ <h1>Football highlights</h1>
+<div> */}
+{/* <iframe src='https://www.scorebat.com/embed/g/1045575/?utm_source=api&utm_medium=match&utm_campaign=dflt' frameborder='0' width='560' height='650' ></iframe> */}
+<div>
+<iframe src={jokeArr2?.[29]?.embed?.match(urlRegex)[1]} frameborder='0' width='560' height='650' alt="" allowfullscreen allow='autoplay; fullscreen' title="This is a unique title" ></iframe>
+</div>
     {/* <div>
     <iframe src={jokeArr2?.[70]?.embed?.match(urlRegex)[1]} frameborder='0' width='560' height='650' alt="" allowfullscreen allow='autoplay; fullscreen' ></iframe>
     </div> */}
-    <div style={{width: "100px", height:"100px", }} className="App">
-    <Moment fromNow >{jokeArr2?.[29]?.date}</Moment>
-    <p>{jokeArr2?.[29]?.competition.name}</p>
-    <p>{jokeArr2?.[29]?.title}</p><img src={jokeArr2?.[29]?.thumbnail}/>
+     <div style={{width: "100px", height:"100px", }} className="App">
+     <Moment fromNow >{jokeArr2?.[29]?.date}</Moment>
+     <p>{jokeArr2?.[29]?.competition.name}</p>
+     <p>{jokeArr2?.[29]?.title}</p><img src={jokeArr2?.[29]?.thumbnail} alt=""/>
   
     </div>
-    </div>
+   </div>
+
   );
 }
 
